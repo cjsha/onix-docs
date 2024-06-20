@@ -484,19 +484,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<div class="admonition important">
+  <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This is a forked, <strong>unofficial</strong>, work-in-progress version of the onix-docs</p>
 </div>
-</div>
-</div>
 <section id="rhs2116-headstage">
 <h1>RHS2116 Headstage<a class="headerlink" href="#rhs2116-headstage" title="Link to this heading">#</a></h1>
-<p>The RHS2116 Headstage is a serialized headstage for small animals with 32 channels which can independently be configured as stimulator outputs or amplifier inputs. The RHS2116 can be used with passive probes (e.g. silicon arrays, EEG/ECOG arrays, etc) using a 36-Channel Omnetics Adapter or similar</p>
+<p>The RHS2116 Headstage is a serialized headstage for small animals with 32 channels which can independently be configured as stimulator outputs or amplifier inputs. The RHS2116 can be used with passive probes (e.g. silicon arrays, EEG/ECOG arrays, etc) using a 36-Channel Omnetics EIB.</p>
 <a class="reference internal image-reference" href="../../_images/rhs2116.png"><img alt="ONIX rhs2116" class="align-center" src="../../_images/rhs2116.png" style="height: 400px;" /></a>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -506,8 +500,8 @@ document.write(`
 <h2>Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Two RHS2116 ICs for a combined 32 reconfigurable i/o ephys channels</p></li>
-<li><p>Stimulator max current: 2.55mA</p></li>
-<li><p>30193.236714975847 sample rate</p></li>
+<li><p>Max stimulator current: 2.55mA</p></li>
+<li><p>Sample rate: 30193.2367 Hz</p></li>
 <li><p>Stimulus active and stimulus trigger pins</p></li>
 <li><p>On-board Lattice Crosslink™ FPGA for real-time data arbitration</p></li>
 </ul>
@@ -582,15 +576,15 @@ tetrodes, silicon probe arrays, tungsten microwires, steel EEG wires, etc.)</p>
 <a class="reference internal image-reference" href="../../_images/rhs2116-omnetics.webp"><img alt="ONIX rhs2116 omnetics" class="align-center" src="../../_images/rhs2116-omnetics.webp" style="height: 400px;" /></a>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
-<p>We still have to photoshop this image, but I want to make sure that this is the way we want to map the channels 0-&gt;32 (ignoring GNDs and refs):</p>
-<p>15&lt;———————————————–0</p>
-<p>16———————————————–&gt;31</p>
+<p>We still have to photoshop this image, but I want to make sure that this is the way we want to map the channels 0-&gt;31 (ignoring GNDs and refs):</p>
+<p>15&lt;——————————————————-0</p>
+<p>16——————————————————-&gt;31</p>
 <p>(IS THIS TRUE?)</p>
 </div>
 <section id="stimulation">
 <h3>Stimulation<a class="headerlink" href="#stimulation" title="Link to this heading">#</a></h3>
 <p>Stimulus trains can be parameterized in a similar way to the master-8 or pulse pal. (IS THIS TRUE?)</p>
-<p>The stimulator can supply up to +/- 2.55 mA. The compliance voltage is 10V (IS THIS TRUE?)</p>
+<p>The stimulator can supply up to +/- 2.55 mA. The compliance voltage is 14V (IS THIS TRUE?)</p>
 </section>
 </section>
 <section id="bill-of-materials">
