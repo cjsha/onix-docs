@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Usage Warnings &#8212; ONIX Docs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=5fb06fa6" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/copyURLToClipboard.js?v=6c4d178e"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Getting Started/warnings';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hardware Guide" href="../Hardware%20Guide/index.html" />
+    <link rel="prev" title="What is ONIX?" href="whatisonix.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/onix_open_ephys_logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/onix_open_ephys_logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Hardware%20Guide/index.html">
+                         Hardware Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Software%20Guide/index.html">
+                         Software Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Resources/index.html">
+                         Resources
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://open-ephys.org">
+                    Open Ephys
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/onix-docs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Hardware%20Guide/index.html">
+                         Hardware Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Software%20Guide/index.html">
+                         Software Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Resources/index.html">
+                         Resources
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://open-ephys.org">
+                    Open Ephys
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/onix-docs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="whatisonix.html">What is ONIX?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Usage Warnings</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Getting Started</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Usage Warnings</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is a forked, <strong>unofficial</strong>, work-in-progress version of the onix-docs</p>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound" id="warnings">
+</div>
+<section id="usage-warnings">
+<h1>Usage Warnings<a class="headerlink" href="#usage-warnings" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Improper setup and usage can cause damage to system components.</p>
+</div>
+<ul class="simple">
+<li><p>Read the following warnings before starting to work with your system. These are crucial
+aspects to consider during setup and usage that are included in the documentation but
+are listed here for your convenience.</p></li>
+<li><p>Read the complete documentation carefully to understand how the system works and refer
+back to these warnings before using it.</p></li>
+</ul>
+<section id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Connecting or disconnecting the breakout board while the PC is on causes damage to the
+FMChost. For more details, see <a class="reference internal" href="../Hardware%20Guide/Breakout%20Board/setup.html#breakout-setup"><span class="std std-ref">Breakout Board Guide</span></a>.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Power off the PC before connecting/disconnecting the breakout board.</strong></p>
+</div>
+<ul class="simple">
+<li><p>Headstage voltage must be configured correctly for operation. The voltage that works
+for one headstage can damage another, and depends on your hardware configuration such
+as tether length. For more details, see <a class="reference internal" href="../Hardware%20Guide/Headstages/tether-voltage.html#tether-voltage"><span class="std std-ref">Tethered Headstage Voltages</span></a>.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Ensure each headstage is configured with the correct voltage according to its
+specification before connecting and switching on the headstage port switch.</strong></p>
+</div>
+</section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Link to this heading">#</a></h2>
+<p><em>For the current Bonsai.ONIX library which is being revised to improve usability</em></p>
+<ul class="simple">
+<li><p>Headstage port voltage configuration is managed via the <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/ONIContext.html#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> node
+or the <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/HeadstagePortControlDevice.html#bonsai-headstageportcontroldev"><span class="std std-ref">HeadstagePortControlDevice</span></a> node. The changes you make using these
+nodes apply immediately and persist in hardware even if the Bonsai workflow is not
+running. Headstage port voltage is reset to the default 4.9V only on a power cycle
+(power off and on — not reboot).</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Keep the headstage port switches off until you have configured each port correctly.</strong></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Remember to set the headstage voltage to the desired value after a power cycle.</strong></p>
+</div>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/ONIContext.html#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> provides a dynamic window to read and write to hardware,
+but parameters such as device voltage are not saved in the node when the workflow is
+saved. The <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/HeadstagePortControlDevice.html#bonsai-headstageportcontroldev"><span class="std std-ref">HeadstagePortControlDevice</span></a> node also reads and writes to hardware,
+but parameters are saved with the workflow. On loading a workflow, Bonsai writes the
+parameter values set when the workflow was last saved.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you configure the voltage, the <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/ONIContext.html#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> node shows that value
+and when you save the workflow this value is not saved. Therefore, that value will
+not be set to hardware when you load the workflow again. On loading the workflow,
+the <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/ONIContext.html#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> node will be reading the voltage that is already set
+on the hardware and showing this  in the <code class="docutils literal notranslate"><span class="pre">LinkVoltage</span></code> field.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you configure the voltage, the <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/HeadstagePortControlDevice.html#bonsai-headstageportcontroldev"><span class="std std-ref">HeadstagePortControlDevice</span></a> node shows
+that value and when you save the workflow this value is saved. Therefore, that value
+will be set to hardware when you load the workflow again. If you make changes to the
+voltage value (with any node) and save the workflow, they will be saved in the
+<code class="docutils literal notranslate"><span class="pre">LinkVoltage</span></code> property of the <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/HeadstagePortControlDevice.html#bonsai-headstageportcontroldev"><span class="std std-ref">HeadstagePortControlDevice</span></a> node.</p>
+</div>
+<ul class="simple">
+<li><p>Any workflows containing the <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/NeuropixelsV1eDevice.html#bonsai-neuropixelsv1edev"><span class="std std-ref">NeuropixelsV1eDevice</span></a> node require the
+<a class="reference internal" href="../Hardware%20Guide/Headstages/headstage-neuropix-1e.html#headstage-neuropix1e"><span class="std std-ref">Neuropixels-1.0e Headstage</span></a> to be connected before the workflows can be opened or
+loaded into Bonsai.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Check that the voltage set to the headstage port is correct for the
+<a class="reference internal" href="../Hardware%20Guide/Headstages/headstage-neuropix-1e.html#headstage-neuropix1e"><span class="std std-ref">Neuropixels-1.0e Headstage</span></a> by using a workflow of a single <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/ONIContext.html#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a>
+node to configure it before connecting the headstage in order to open a workflow that
+contains the <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/NeuropixelsV1eDevice.html#bonsai-neuropixelsv1edev"><span class="std std-ref">NeuropixelsV1eDevice</span></a> node.</p>
+</div>
+<ul class="simple">
+<li><p>An <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/Nodes/ONIContext.html#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> node or any device node in a workflow can override device
+settings in another workflow if device addresses are not distinct, because these nodes
+read/write directly to hardware.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Only have one workflow open at a time.</strong></p>
+</div>
+</section>
+</section>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="whatisonix.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">What is ONIX?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Hardware%20Guide/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"> Hardware Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware">Hardware</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/Getting Started/warnings.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/Getting Started/warnings.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2024, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
