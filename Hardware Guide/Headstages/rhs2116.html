@@ -490,8 +490,8 @@ document.write(`
 </div>
 <section id="rhs2116-headstage">
 <h1>RHS2116 Headstage<a class="headerlink" href="#rhs2116-headstage" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../../_images/rhs2116.webp"><img alt="ONIX rhs2116" class="align-center" src="../../_images/rhs2116.webp" style="height: 300px;" /></a>
 <p>The RHS2116 Headstage is a serialized headstage for small animals with 32 channels which can independently be configured as stimulator outputs or amplifier inputs. The RHS2116 can be used with passive probes (e.g. silicon arrays, EEG/ECOG arrays, etc) using a 36-Channel Omnetics EIB. To learn how to use the RHS2116 headstage in software, refer to the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116Device.html"><span class="doc">RHS2116Device</span></a> software guide. For technical information, refer to the <a class="reference internal" href="../Datasheets/rhs2116.html"><span class="doc">RHS2116</span></a> datasheet.</p>
-<a class="reference internal image-reference" href="../../_images/rhs2116.webp"><img alt="ONIX rhs2116" class="align-center" src="../../_images/rhs2116.webp" style="height: 400px;" /></a>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>There are multiple headstage hardware revisions. The revision number is printed on the PCB. You can use the <a class="reference external" href="https://docs.google.com/spreadsheets/d/1LwEOlOkL_HJKeTmNJFVIlItzVeCZDzOt_9Up_rA36Ic/edit?usp=sharing">compatibility matrix</a> to find host hardware for your headstage.</p>
@@ -507,7 +507,7 @@ document.write(`
 </ul>
 </section>
 <section id="data-link-serialization">
-<h2>Data Link Serialization<a class="headerlink" href="#data-link-serialization" title="Link to this heading">#</a></h2>
+<span id="rhs2116-data-link-serialization"></span><h2>Data Link Serialization<a class="headerlink" href="#data-link-serialization" title="Link to this heading">#</a></h2>
 <p>For details on data serialization and headstage gateware, have a look at the
 <a class="reference internal" href="serialization.html#serialization"><span class="std std-ref">Coaxial Data Serialization &amp; Power</span></a> page, which describes how coax headstages operate in
 general terms. The RHS2116 headstage has the following coaxial link properties:</p>
@@ -569,15 +569,40 @@ permanently damage the headstage.</p>
 </section>
 <section id="electrophysiology">
 <h2>Electrophysiology<a class="headerlink" href="#electrophysiology" title="Link to this heading">#</a></h2>
-<p>RHS2116 headstage uses two 16-channel, BGA-packaged <a class="reference external" href="https://intantech.com/">Intan RHS2116</a> bioamplifier chip. The chip is operated at a fixed
-sampling rate of 30 kHz/channel. The RHS2116 provides 32 ephys channels which are exposed via a 36 pin <a class="reference external" href="https://www.omnetics.com/wp-content/uploads/2022/01/A79025-001.pdf">Omnetics connector</a> at the edge of the headstage and can record from most passive probes (e.g. tetrodes, silicon probe arrays, tungsten microwires, steel EEG wires, etc.).</p>
+<p>RHS2116 headstage uses two 16-channel <a class="reference external" href="https://intantech.com/">Intan RHS2116</a> bioamplifier chip. The chip is operated at a fixed
+sampling rate of 30 kHz/channel. These 32 ephys channels are exposed via a 36 pin <a class="reference external" href="https://www.omnetics.com/wp-content/uploads/2022/01/A79025-001.pdf">Omnetics connector</a> at the edge of the headstage and can record from most passive probes (e.g. tetrodes, silicon probe arrays, tungsten microwires, steel EEG wires, etc.) as well as stimulate.</p>
+<section id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://bonsai-rx.org/docs/articles/installation.html">Install Bonsai</a> and <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Installation.html"><span class="doc">Install Bonsai.ONIX</span></a></p></li>
+<li><p><a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/GettingStarted.html"><span class="doc">Get Started with Bonsai</span></a></p></li>
+<li><p>Establish hardware connections</p>
+<ol class="arabic simple">
+<li><p>Gather Materials</p>
+<ul class="simple">
+<li><p>RHS2116 headstage</p></li>
+<li><p>ONIX acquisition system</p></li>
+<li><p>Coaxial tether</p></li>
+</ul>
+</li>
+<li><p>Set the ONIX headstage switch off</p></li>
+<li><p>Connect RHS2116 headstage using the coaxial tether</p>
+<ol class="arabic simple">
+<li><p>Gently thread on the SMA connector into the ONIX headstage port</p></li>
+<li><p>Gently press the x.fl coax connector onto the RHS2116 headstage</p></li>
+</ol>
+</li>
+<li><p>Set the correct voltage according to the table in the <a class="reference internal" href="#rhs2116-data-link-serialization"><span class="std std-ref">Data Link Serialization</span></a> section</p></li>
+<li><p>Set the ONIX headstage switch on</p></li>
+</ol>
+</li>
+<li><p>Run the workflow on the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116Device.html"><span class="doc">RHS2116Device</span></a> page</p></li>
+</ol>
+<p>Stimulus trains can be parameterized in a similar way to the master-8 or pulse pal. For more information on this, refer to the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116Device.html#stimulator-configurator"><span class="std std-ref">Configuration GUI</span></a> section of the documentation.</p>
+</section>
 <section id="rhs2116-pinout">
 <h3>RHS2116 Pinout<a class="headerlink" href="#rhs2116-pinout" title="Link to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../../_images/rhs2116-omnetics-pinout.webp"><img alt="ONIX rhs2116 omnetics" class="align-center" src="../../_images/rhs2116-omnetics-pinout.webp" style="height: 300px;" /></a>
-</section>
-<section id="stimulation">
-<h3>Stimulation<a class="headerlink" href="#stimulation" title="Link to this heading">#</a></h3>
-<p>Stimulus trains can be parameterized in a similar way to the master-8 or pulse pal. For more information on this, refer to the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116Device.html#stimulator-configurator"><span class="std std-ref">Configuration GUI</span></a> section of the documentation.</p>
 </section>
 </section>
 <section id="bill-of-materials">
@@ -648,8 +673,8 @@ sampling rate of 30 kHz/channel. The RHS2116 provides 32 ephys channels which ar
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-link-serialization">Data Link Serialization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrophysiology">Electrophysiology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rhs2116-pinout">RHS2116 Pinout</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stimulation">Stimulation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bill-of-materials">Bill of Materials</a></li>
