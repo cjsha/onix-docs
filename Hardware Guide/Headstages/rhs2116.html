@@ -599,7 +599,12 @@ sampling rate of 30 kHz/channel. These 32 ephys channels are exposed via a 36 pi
 <li><p>Set the ONIX headstage switch on</p></li>
 </ol>
 </li>
-<li><p>Configure the RHS2116 properties and run the workflow on the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116Device.html"><span class="doc">RHS2116Device</span></a> page</p></li>
+<li><p>Either:</p>
+<ul class="simple">
+<li><p>Configure the RHS2116Device node properties and run the workflow on the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116Device.html"><span class="doc">RHS2116Device</span></a> page if you want to collect data</p></li>
+<li><p>Configure the RHS2116TriggerDevice node properties and run the workflow on the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116TriggerDevice.html"><span class="doc">RHS2116TriggerDevice</span></a> page if you want to trigger stimulus</p></li>
+</ul>
+</li>
 </ol>
 <p>Stimulus trains can be parameterized in a similar way to the master-8 or pulse pal. Refer to the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116Device.html#stimulator-configurator"><span class="std std-ref">Configuration GUI</span></a> section of the documentation for more info.</p>
 </section>
