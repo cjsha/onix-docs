@@ -490,8 +490,8 @@ document.write(`
 </div>
 <section id="rhs2116-headstage">
 <h1>RHS2116 Headstage<a class="headerlink" href="#rhs2116-headstage" title="Link to this heading">#</a></h1>
-<p>The RHS2116 Headstage is a serialized headstage for small animals with 32 channels which can independently be configured as stimulator outputs or amplifier inputs. The RHS2116 can be used with passive probes (e.g. silicon arrays, EEG/ECOG arrays, etc) using a 36-Channel Omnetics EIB.</p>
-<a class="reference internal image-reference" href="../../_images/rhs2116.png"><img alt="ONIX rhs2116" class="align-center" src="../../_images/rhs2116.png" style="height: 400px;" /></a>
+<p>The RHS2116 Headstage is a serialized headstage for small animals with 32 channels which can independently be configured as stimulator outputs or amplifier inputs. The RHS2116 can be used with passive probes (e.g. silicon arrays, EEG/ECOG arrays, etc) using a 36-Channel Omnetics EIB. To learn how to use the RHS2116 headstage in software, refer to the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116Device.html"><span class="doc">RHS2116Device</span></a> software guide. For technical information, refer to the <a class="reference internal" href="../Datasheets/rhs2116.html"><span class="doc">RHS2116</span></a> datasheet.</p>
+<a class="reference internal image-reference" href="../../_images/rhs2116.webp"><img alt="ONIX rhs2116" class="align-center" src="../../_images/rhs2116.webp" style="height: 400px;" /></a>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>There are multiple headstage hardware revisions. The revision number is printed on the PCB. You can use the <a class="reference external" href="https://docs.google.com/spreadsheets/d/1LwEOlOkL_HJKeTmNJFVIlItzVeCZDzOt_9Up_rA36Ic/edit?usp=sharing">compatibility matrix</a> to find host hardware for your headstage.</p>
@@ -570,28 +570,20 @@ permanently damage the headstage.</p>
 <section id="electrophysiology">
 <h2>Electrophysiology<a class="headerlink" href="#electrophysiology" title="Link to this heading">#</a></h2>
 <p>RHS2116 headstage uses two 16-channel, BGA-packaged <a class="reference external" href="https://intantech.com/">Intan RHS2116</a> bioamplifier chip. The chip is operated at a fixed
-sampling rate of 30 kHz/channel. The RHS2116 provides 32 ephys channels which are exposed via a 36 pin <a class="reference external" href="https://www.omnetics.com/wp-content/uploads/2022/01/A79025-001.pdf">Omnetics connector</a> on the bottom of the headstage and can be used to record from most passive probes (e.g.
-tetrodes, silicon probe arrays, tungsten microwires, steel EEG wires, etc.)</p>
-<p>The pinout of the RHS2116 is as follows:</p>
-<a class="reference internal image-reference" href="../../_images/rhs2116-omnetics.webp"><img alt="ONIX rhs2116 omnetics" class="align-center" src="../../_images/rhs2116-omnetics.webp" style="height: 400px;" /></a>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>We still have to photoshop this image, but I want to make sure that this is the way we want to map the channels 0-&gt;31 (ignoring GNDs and refs):</p>
-<p>15&lt;——————————————————-0</p>
-<p>16——————————————————-&gt;31</p>
-<p>(IS THIS TRUE?)</p>
-</div>
+sampling rate of 30 kHz/channel. The RHS2116 provides 32 ephys channels which are exposed via a 36 pin <a class="reference external" href="https://www.omnetics.com/wp-content/uploads/2022/01/A79025-001.pdf">Omnetics connector</a> at the edge of the headstage and can record from most passive probes (e.g. tetrodes, silicon probe arrays, tungsten microwires, steel EEG wires, etc.).</p>
+<section id="rhs2116-pinout">
+<h3>RHS2116 Pinout<a class="headerlink" href="#rhs2116-pinout" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="../../_images/rhs2116-omnetics-pinout.webp"><img alt="ONIX rhs2116 omnetics" class="align-center" src="../../_images/rhs2116-omnetics-pinout.webp" style="height: 300px;" /></a>
+</section>
 <section id="stimulation">
 <h3>Stimulation<a class="headerlink" href="#stimulation" title="Link to this heading">#</a></h3>
-<p>Stimulus trains can be parameterized in a similar way to the master-8 or pulse pal. (IS THIS TRUE?)</p>
-<p>The stimulator can supply up to +/- 2.55 mA. The compliance voltage is 14V (IS THIS TRUE?)</p>
+<p>Stimulus trains can be parameterized in a similar way to the master-8 or pulse pal. For more information on this, refer to the <a class="reference internal" href="../../Software%20Guide/Bonsai.ONIX/Nodes/RHS2116Device.html#stimulator-configurator"><span class="std std-ref">Configuration GUI</span></a> section of the documentation.</p>
 </section>
 </section>
 <section id="bill-of-materials">
 <h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="../../_static/boms/headstage-rhs2116_bom.html">Interactive BOM</a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/9bf224e924c75607efef2f922dabfaab/headstage-rhs2116.csv"><code class="xref download docutils literal notranslate"><span class="pre">Downloadable</span> <span class="pre">CSV</span> <span class="pre">BOM</span></code></a></p></li>
+<li><p><a class="reference external" href="../../_static/boms/headstage-rhs2116_bom.html">Interactive BoM</a> (a csv BoM can be downloaded from this page)</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -656,6 +648,7 @@ tetrodes, silicon probe arrays, tungsten microwires, steel EEG wires, etc.)</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-link-serialization">Data Link Serialization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrophysiology">Electrophysiology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rhs2116-pinout">RHS2116 Pinout</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stimulation">Stimulation</a></li>
 </ul>
 </li>
